@@ -3,445 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vignan Lara College - Empowering Minds, Shaping Futures</title>
+    <title>Vignan lara college - Your Future Starts Here</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='80' text-anchor='middle' dominant-baseline='central'%3E🎓%3C/text%3E%3C/svg%3E" type="image/svg+xml">
     <style>
+        /* Basic Reset & Global Styles */
         :root {
-            --primary-color: #0056b3; /* A nice blue */
-            --secondary-color: #28a745; /* Green for actions */
+            --primary-color: #0056b3;
+            --secondary-color: #007bff;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
             --text-color: #333;
-            --light-bg: #f8f9fa;
-            --white: #fff;
-            --gray-border: #ddd;
-        }
-
-        /* Basic Reset & Body Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --border-radius: 5px;
+            --transition-speed: 0.3s ease;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--white);
+            background-color: var(--light-color);
             scroll-behavior: smooth;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+            margin-bottom: 0.5em;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
+        .section-padding {
+            padding: 80px 0;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .bg-dark {
+            background-color: var(--dark-color);
+            color: var(--white-color);
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .bg-light {
+            background-color: var(--white-color);
         }
 
-        p {
-            margin-bottom: 15px;
+        .text-white {
+            color: var(--white-color) !important;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+        .mt-3 { margin-top: 15px; }
+        .mt-4 { margin-top: 20px; }
 
-        .btn:hover {
-            background-color: #004085;
-            text-decoration: none;
-        }
 
-        .btn-secondary {
-            background-color: var(--secondary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #218838;
-        }
-
-        /* Header & Navigation */
+        /* Header */
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--white-color);
             padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.8em;
             margin: 0;
         }
 
         .logo a {
-            color: var(--white);
-            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
-        .nav-toggle {
-            display: none; /* Hidden by default for larger screens */
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--white);
-            cursor: pointer;
-        }
-
-        .nav-menu {
-            list-style: none;
+        nav ul {
             display: flex;
         }
 
-        .nav-menu li {
+        nav ul li {
             margin-left: 25px;
         }
 
-        .nav-menu a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            padding: 5px 0;
         }
 
-        .nav-menu a:hover {
-            color: #cceeff; /* Lighter blue */
-            text-decoration: none;
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
         }
-        
+
+        .admin-link {
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            transition: background-color var(--transition-speed);
+        }
+
+        .admin-link:hover {
+            background-color: var(--secondary-color);
+        }
+
         /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500/0056b3/ffffff?text=VIGNAN+LARA+COLLEGE') no-repeat center center/cover;
-            color: var(--white);
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/0056b3/ffffff?text=Vignan+lara+college+Campus') no-repeat center center/cover;
+            color: var(--white-color);
             text-align: center;
-            padding: 100px 20px;
-            min-height: 400px;
+            padding: 150px 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 60vh;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--white);
+        #hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--white-color);
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        #hero p {
+            font-size: 1.5em;
             margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        /* Sections */
-        .section {
-            padding: 80px 0;
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: background-color var(--transition-speed);
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
         }
 
-        .section.bg-light {
-            background-color: var(--light-bg);
+        .btn:hover {
+            background-color: var(--primary-color);
         }
 
-        .section h2 {
+        /* About & Features Sections */
+        #about h3, #features h3, #data-demo h3, #contact h3 {
             text-align: center;
+            font-size: 2.5em;
             margin-bottom: 40px;
-            font-size: 2.5rem;
+            color: var(--primary-color);
         }
 
-        /* Course Grid */
-        .course-grid {
+        #about p {
+            font-size: 1.1em;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .course-item {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .course-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .course-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .course-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .course-item ul li {
-            padding: 8px 0;
-            border-bottom: 1px dotted var(--gray-border);
-        }
-
-        .course-item ul li:last-child {
-            border-bottom: none;
-        }
-
-        /* Faculty Grid */
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+        .feature-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
-            margin-top: 30px;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
         }
 
-        .faculty-item {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
 
-        .faculty-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid var(--primary-color);
-        }
-
-        .faculty-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .faculty-item p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
+        .feature-card h4 {
+            color: var(--primary-color);
+            font-size: 1.4em;
             margin-bottom: 10px;
         }
 
-        .contact-form-container {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        .feature-card p {
+            color: #555;
+            font-size: 0.95em;
         }
 
-        .contact-form .form-group {
+        /* Data Demo Section */
+        #data-demo h4 {
+            color: var(--primary-color);
+            margin-top: 30px;
             margin-bottom: 15px;
         }
 
-        .contact-form label {
+        .data-controls {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .data-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 50px;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: var(--dark-color);
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid var(--gray-border);
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
         }
 
-        .contact-form textarea {
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        textarea {
             resize: vertical;
         }
 
-        .contact-form button {
-            width: auto;
-            margin-top: 10px;
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        .message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            display: none; /* Hidden by default */
-            font-weight: bold;
-        }
-
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Backend Demo */
-        .demo-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-        .response-area {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 20px;
-            min-height: 100px;
-            white-space: pre-wrap; /* Preserve whitespace and break lines */
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-        }
-        
         /* Footer */
         footer {
-            background-color: #333;
-            color: var(--white);
-            padding: 30px 0;
+            background-color: var(--dark-color);
+            color: var(--white-color);
             text-align: center;
-            font-size: 0.9rem;
+            padding: 30px 0;
+            font-size: 0.9em;
         }
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        footer p {
+            margin: 5px 0;
         }
 
-        .footer-links a {
-            color: var(--white);
+        footer a {
+            color: var(--white-color);
             margin: 0 10px;
-            text-decoration: none;
+            transition: color var(--transition-speed);
         }
 
-        .footer-links a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: var(--secondary-color);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
+            header .container {
                 flex-direction: column;
-                width: 100%;
-                background-color: var(--primary-color);
-                position: absolute;
-                top: 70px; /* Adjust based on header height */
-                left: 0;
-                padding: 20px 0;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                margin: 0;
                 text-align: center;
-                padding: 10px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
-            .nav-menu li:last-child {
-                border-bottom: none;
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
             }
 
-            .hero h2 {
-                font-size: 2.5rem;
+            nav ul li {
+                margin: 5px 0;
             }
 
-            .section {
+            #hero {
+                padding: 100px 0;
+            }
+            #hero h2 {
+                font-size: 2.5em;
+            }
+            #hero p {
+                font-size: 1.2em;
+            }
+
+            .section-padding {
                 padding: 60px 0;
             }
 
-            .section h2 {
-                font-size: 2rem;
+            #about h3, #features h3, #data-demo h3, #contact h3 {
+                font-size: 2em;
             }
 
-            .contact-grid {
+            .feature-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .course-grid, .faculty-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .demo-actions {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .logo {
-                font-size: 1.5rem;
             }
         }
     </style>
@@ -449,319 +363,288 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo"><a href="#home">Vignan Lara College</a></h1>
+            <h1 class="logo"><a href="#">Vignan lara college</a></h1>
             <nav>
-                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#admissions">Admissions</a></li>
                     <li><a href="#faculty">Faculty</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#admin-dashboard" class="btn btn-primary">Admin Dashboard</a></li>
+                    <li><a href="admin-dashboard.html" class="admin-link">Admin Dashboard</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Welcome to Vignan Lara College</h2>
-                <p>Empowering minds, shaping futures.</p>
-                <a href="#admissions" class="btn btn-secondary">Apply Now</a>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container">
-                <h2>About Vignan Lara College</h2>
-                <p>Vignan Lara College is committed to providing high-quality education and fostering a vibrant learning environment. With state-of-the-art facilities and a dedicated faculty, we prepare students for successful careers and responsible global citizenship.</p>
-                <p>Our vision is to be a leading institution recognized for academic excellence, innovative research, and significant contributions to society.</p>
-            </div>
-        </section>
-
-        <section id="courses" class="section bg-light">
-            <div class="container">
-                <h2>Our Programs & Courses</h2>
-                <div class="course-grid">
-                    <div class="course-item">
-                        <h3>Engineering & Technology</h3>
-                        <ul>
-                            <li>Computer Science Engineering</li>
-                            <li>Electronics & Communication Engineering</li>
-                            <li>Mechanical Engineering</li>
-                            <li>Civil Engineering</li>
-                        </ul>
-                    </div>
-                    <div class="course-item">
-                        <h3>Business & Management</h3>
-                        <ul>
-                            <li>Bachelor of Business Administration (BBA)</li>
-                            <li>Master of Business Administration (MBA)</li>
-                            <li>B.Com (Hons.)</li>
-                        </ul>
-                    </div>
-                    <div class="course-item">
-                        <h3>Arts & Sciences</h3>
-                        <ul>
-                            <li>Bachelor of Science (B.Sc)</li>
-                            <li>Bachelor of Arts (B.A)</li>
-                            <li>Master of Science (M.Sc)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admissions" class="section">
-            <div class="container">
-                <h2>Admissions</h2>
-                <p>Admissions for the upcoming academic year are now open! We invite aspiring students to explore our diverse range of programs. Please review our admission criteria and application process below.</p>
-                <p><strong>Key Dates:</strong> Application Deadline: July 31st | Entrance Exam: August 15th</p>
-                <a href="#" class="btn btn-primary">View Admission Prospectus</a>
-            </div>
-        </section>
-
-        <section id="faculty" class="section bg-light">
-            <div class="container">
-                <h2>Our Distinguished Faculty</h2>
-                <p>Our faculty members are highly qualified, experienced, and dedicated professionals who are passionate about teaching and research. They bring a wealth of knowledge and real-world experience to the classroom, guiding students to achieve their full potential.</p>
-                <div class="faculty-grid">
-                    <div class="faculty-item">
-                        <img src="https://via.placeholder.com/100x100?text=Prof.A" alt="Professor Anjali Sharma">
-                        <h3>Prof. Anjali Sharma</h3>
-                        <p>Head of Computer Science</p>
-                    </div>
-                    <div class="faculty-item">
-                        <img src="https://via.placeholder.com/100x100?text=Dr.B" alt="Dr. Rohit Kumar">
-                        <h3>Dr. Rohit Kumar</h3>
-                        <p>Associate Professor, Mechanical Eng.</p>
-                    </div>
-                    <div class="faculty-item">
-                        <img src="https://via.placeholder.com/100x100?text=Ms.C" alt="Ms. Priya Singh">
-                        <h3>Ms. Priya Singh</h3>
-                        <p>Lecturer, Business Administration</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p><strong>Address:</strong> 123 College Road, Vignan Nagar, Hyderabad, India</p>
-                        <p><strong>Phone:</strong> +91 12345 67890</p>
-                        <p><strong>Email:</strong> info@vignanlara.edu</p>
-                        <p><strong>Office Hours:</strong> Mon - Fri, 9:00 AM - 5:00 PM</p>
-                    </div>
-                    <div class="contact-form-container">
-                        <h3>Send us a Message</h3>
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject:</label>
-                                <input type="text" id="subject" name="subject">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                            <div id="formMessage" class="message"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admin-dashboard" class="section bg-light">
-            <div class="container">
-                <h2>Admin Dashboard Access</h2>
-                <p>This is a placeholder for the Admin Dashboard. In a full-stack application, this link would lead to a secure login page for administrators.</p>
-                <p>For demonstration purposes, click the buttons below to interact with a mock backend API.</p>
-                <div class="demo-actions">
-                    <button id="fetchDataBtn" class="btn btn-secondary">Fetch Data (GET)</button>
-                    <button id="postDataBtn" class="btn btn-secondary">Send Data (POST)</button>
-                </div>
-                <div id="backendResponse" class="response-area">
-                    <p><em>No data fetched yet.</em></p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
+    <section id="hero">
         <div class="container">
-            <p>&copy; 2023 Vignan Lara College. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#admin-dashboard">Admin Login</a>
+            <h2>Shape Your Future with Vignan lara college</h2>
+            <p>Empowering minds, building careers.</p>
+            <a href="#contact" class="btn">Learn More</a>
+            <a href="#admissions" class="btn" style="margin-left: 15px;">Apply Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <h3>Welcome to Vignan lara college</h3>
+            <p>Vignan lara college is dedicated to providing quality education and fostering an environment of innovation and academic excellence. With state-of-the-art facilities and a commitment to holistic development, we prepare students for success in a rapidly changing world. Our diverse programs, experienced faculty, and strong industry connections ensure that our graduates are well-equipped to face global challenges and contribute meaningfully to society.</p>
+        </div>
+    </section>
+
+    <section id="features" class="section-padding">
+        <div class="container">
+            <h3>Why Choose Us?</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Experienced Faculty</h4>
+                    <p>Learn from dedicated professors and industry experts who are passionate about teaching and research.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Modern Infrastructure</h4>
+                    <p>State-of-the-art labs, libraries, smart classrooms, and recreational facilities for a dynamic learning environment.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Strong Placements</h4>
+                    <p>Excellent track record of placing students in top multinational companies and leading organizations.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Holistic Development</h4>
+                    <p>Focus on overall personality development, leadership skills, and extracurricular activities for well-rounded growth.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="data-demo" class="section-padding bg-light">
+        <div class="container">
+            <h3>Full-Stack Data Demo (Frontend Only)</h3>
+            <p>This section simulates interaction with a backend API at <code>http://localhost:5001/api/data</code>. If the backend is not running, the JavaScript will gracefully handle the network error and display an appropriate message, demonstrating robustness.</p>
+            
+            <div class="data-controls">
+                <h4>Fetch Data (GET Request)</h4>
+                <p>Click the button below to attempt fetching data from the backend.</p>
+                <button id="fetchDataBtn" class="btn">Fetch Data</button>
+                <div id="getDataResult" class="data-result"></div>
+            </div>
+
+            <div class="data-controls mt-4">
+                <h4>Post Data (POST Request)</h4>
+                <p>Enter some text and click 'Post Data' to simulate sending data to the backend.</p>
+                <form id="postDataForm">
+                    <div class="form-group">
+                        <label for="postDataItem">Data to Send:</label>
+                        <input type="text" id="postDataItem" name="item" placeholder="e.g., Student Inquiry" required>
+                    </div>
+                    <button type="submit" class="btn">Post Data</button>
+                </form>
+                <div id="postDataResult" class="data-result"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder Sections for Navigation -->
+    <section id="courses" class="section-padding" style="display: none;"></section>
+    <section id="admissions" class="section-padding" style="display: none;"></section>
+    <section id="faculty" class="section-padding" style="display: none;"></section>
+    <!-- End Placeholder Sections -->
+
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 20px auto;">Have questions about admissions, courses, or anything else? Feel free to reach out to us using the form below. Our team will get back to you as soon as possible.</p>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Inquiry about admissions">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div id="contactFormMessage" class="mt-3" style="text-align: center;"></div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Vignan lara college. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-white">Privacy Policy</a> | 
+                <a href="#" class="text-white">Terms of Service</a> | 
+                <a href="mailto:info@vignanlaracollege.edu" class="text-white">info@vignanlaracollege.edu</a>
+            </p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerOffset = document.querySelector('header').offsetHeight;
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - (targetId === '#home' ? 0 : headerOffset); 
+            // --- Data Demo Section ---
+            const fetchDataBtn = document.getElementById('fetchDataBtn');
+            const getDataResult = document.getElementById('getDataResult');
+            const postDataForm = document.getElementById('postDataForm');
+            const postDataItemInput = document.getElementById('postDataItem');
+            const postDataResult = document.getElementById('postDataResult');
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                        // Close mobile nav if open
-                        const navMenu = document.querySelector('.nav-menu');
-                        if (navMenu.classList.contains('active')) {
-                            navMenu.classList.remove('active');
+            // The backend URL for the demo
+            const backendUrl = 'http://localhost:5001/api/data';
+
+            // Helper function to display messages in data demo sections
+            function displayDataMessage(element, message, isError = false) {
+                element.innerHTML = message;
+                element.style.color = isError ? '#dc3545' : '#28a745'; /* Bootstrap danger/success colors */
+                element.style.borderColor = isError ? '#dc3545' : '#28a745';
+                element.style.backgroundColor = isError ? '#f8d7da' : '#d4edda';
+                element.style.padding = '15px';
+                element.style.borderRadius = 'var(--border-radius)';
+                element.style.marginTop = '15px';
+                element.style.borderStyle = 'solid';
+                element.style.borderWidth = '1px';
+            }
+
+            // GET Data functionality
+            if (fetchDataBtn) {
+                fetchDataBtn.addEventListener('click', async () => {
+                    getDataResult.innerHTML = 'Attempting to fetch data...';
+                    getDataResult.style.color = 'gray';
+                    getDataResult.style.borderColor = '#ccc';
+                    getDataResult.style.backgroundColor = '#f0f0f0';
+
+
+                    try {
+                        const response = await fetch(backendUrl);
+
+                        if (!response.ok) {
+                            // Server responded with an HTTP error status (e.g., 404, 500)
+                            const errorText = await response.text();
+                            displayDataMessage(getDataResult, 
+                                `<strong>Error ${response.status} ${response.statusText}:</strong> Could not fetch data.<br>Backend might be unavailable or returned an error.<br>Server message: ${errorText || 'No specific error message.'}`, 
+                                true
+                            );
+                            return;
                         }
+
+                        // Successfully fetched data
+                        const data = await response.json();
+                        displayDataMessage(getDataResult, 
+                            `<strong>Data fetched successfully:</strong><pre>${JSON.stringify(data, null, 2)}</pre>`
+                        );
+
+                    } catch (error) {
+                        // Network error (e.g., backend server not running, connection refused)
+                        console.error('Network or parsing error for GET:', error);
+                        displayDataMessage(getDataResult, 
+                            `<strong>Network Error:</strong> Could not connect to the backend server at <code>${backendUrl}</code>.<br>The backend might be unavailable or offline. Error details: ${error.message}`, 
+                            true
+                        );
                     }
-                });
-            });
-
-            // Mobile Navigation Toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
                 });
             }
 
-            // Contact Form Submission (Frontend only)
+            // POST Data functionality
+            if (postDataForm) {
+                postDataForm.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const itemValue = postDataItemInput.value.trim();
+                    if (!itemValue) {
+                        displayDataMessage(postDataResult, 'Please enter some data to post.', true);
+                        return;
+                    }
+
+                    postDataResult.innerHTML = 'Attempting to post data...';
+                    postDataResult.style.color = 'gray';
+                    postDataResult.style.borderColor = '#ccc';
+                    postDataResult.style.backgroundColor = '#f0f0f0';
+
+                    try {
+                        const response = await fetch(backendUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ 
+                                item: itemValue, 
+                                timestamp: new Date().toISOString(),
+                                source: 'Vignan Lara College Frontend Demo'
+                            }),
+                        });
+
+                        if (!response.ok) {
+                            // Server responded with an HTTP error status
+                            const errorText = await response.text();
+                            displayDataMessage(postDataResult, 
+                                `<strong>Error ${response.status} ${response.statusText}:</strong> Could not post data.<br>Backend might be unavailable or returned an error.<br>Server message: ${errorText || 'No specific error message.'}`, 
+                                true
+                            );
+                            return;
+                        }
+
+                        // Successfully posted data
+                        const data = await response.json();
+                        displayDataMessage(postDataResult, 
+                            `<strong>Data posted successfully:</strong><br>Backend response: <pre>${JSON.stringify(data, null, 2)}</pre>`
+                        );
+                        postDataItemInput.value = ''; // Clear input field
+
+                    } catch (error) {
+                        // Network error
+                        console.error('Network or parsing error for POST:', error);
+                        displayDataMessage(postDataResult, 
+                            `<strong>Network Error:</strong> Could not connect to the backend server at <code>${backendUrl}</code>.<br>The backend might be unavailable or offline. Error details: ${error.message}`, 
+                            true
+                        );
+                    }
+                });
+            }
+
+            // --- Contact Form Section ---
             const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
+            const contactFormMessage = document.getElementById('contactFormMessage');
 
-            if (contactForm && formMessage) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault(); // Prevent actual form submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent actual form submission to a backend
 
-                    // Simple client-side validation
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const message = document.getElementById('message').value.trim();
 
-                    if (!name || !email || !message) {
-                        formMessage.textContent = 'Please fill in all required fields.';
-                        formMessage.className = 'message error';
-                        formMessage.style.display = 'block';
-                        return;
-                    }
+                    // Basic client-side validation
+                    if (name && email && message) {
+                        contactFormMessage.innerHTML = 'Thank you for your message! We have received your inquiry and will get back to you soon.';
+                        contactFormMessage.style.color = '#28a745'; /* Success green */
+                        contactFormMessage.style.backgroundColor = '#d4edda';
+                        contactFormMessage.style.border = '1px solid #28a745';
+                        contactFormMessage.style.padding = '15px';
+                        contactFormMessage.style.borderRadius = 'var(--border-radius)';
+                        contactFormMessage.style.display = 'block'; // Make sure it's visible
 
-                    // Simulate success
-                    formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-                    formMessage.className = 'message success';
-                    formMessage.style.display = 'block';
-
-                    // Clear form fields after a short delay
-                    setTimeout(() => {
+                        // Simulate form submission by clearing inputs
                         contactForm.reset();
-                        formMessage.style.display = 'none';
-                    }, 3000);
-                });
-            }
-
-            // Backend Data Demo (GET/POST)
-            const fetchDataBtn = document.getElementById('fetchDataBtn');
-            const postDataBtn = document.getElementById('postDataBtn');
-            const backendResponseDiv = document.getElementById('backendResponse');
-            const API_URL = 'http://localhost:5001/api/data';
-
-            // Function to display response or error
-            const displayResponse = (data, isError = false) => {
-                if (isError) {
-                    backendResponseDiv.innerHTML = `<p style="color: #721c24;">Error: ${data}</p>`;
-                } else {
-                    backendResponseDiv.innerHTML = `<p style="color: #155724;"><strong>Success!</strong> Response from backend:</p><pre>${JSON.stringify(data, null, 2)}</pre>`;
-                }
-            };
-
-            // GET Request
-            if (fetchDataBtn) {
-                fetchDataBtn.addEventListener('click', async () => {
-                    backendResponseDiv.innerHTML = '<p><em>Fetching data...</em></p>';
-                    try {
-                        const response = await fetch(API_URL, {
-                            method: 'GET',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText || 'Unknown error'}`);
-                        }
-
-                        const data = await response.json();
-                        displayResponse(data);
-
-                    } catch (error) {
-                        console.error('Fetch GET error:', error);
-                        displayResponse(`Could not connect to backend or fetch data. Please ensure 'http://localhost:5001' is running. Error: ${error.message}`, true);
+                    } else {
+                        contactFormMessage.innerHTML = 'Please fill in all required fields (Name, Email, and Message) before sending.';
+                        contactFormMessage.style.color = '#dc3545'; /* Danger red */
+                        contactFormMessage.style.backgroundColor = '#f8d7da';
+                        contactFormMessage.style.border = '1px solid #dc3545';
+                        contactFormMessage.style.padding = '15px';
+                        contactFormMessage.style.borderRadius = 'var(--border-radius)';
+                        contactFormMessage.style.display = 'block'; // Make sure it's visible
                     }
                 });
             }
-
-            // POST Request
-            if (postDataBtn) {
-                postDataBtn.addEventListener('click', async () => {
-                    backendResponseDiv.innerHTML = '<p><em>Sending data...</em></p>';
-                    const dummyData = {
-                        message: "Hello from Vignan Lara College!",
-                        timestamp: new Date().toISOString(),
-                        source: "frontend"
-                    };
-
-                    try {
-                        const response = await fetch(API_URL, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(dummyData)
-                        });
-
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText || 'Unknown error'}`);
-                        }
-
-                        const data = await response.json();
-                        displayResponse(data);
-
-                    } catch (error) {
-                        console.error('Fetch POST error:', error);
-                        displayResponse(`Could not connect to backend or send data. Please ensure 'http://localhost:5001' is running. Error: ${error.message}`, true);
-                    }
-                });
-            }
-
-            // Initial message for backend demo
-            if (backendResponseDiv) {
-                backendResponseDiv.innerHTML = `<p>Click "Fetch Data" or "Send Data" to interact with the backend at <code>${API_URL}</code>. <br><em>(Note: You need a backend server running at this address for it to work.)</em></p>`;
-            }
-
         });
     </script>
 </body>

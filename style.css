@@ -1,438 +1,352 @@
-:root {
-            --primary-color: #0056b3; /* A nice blue */
-            --secondary-color: #28a745; /* Green for actions */
+/* Basic Reset & Global Styles */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #007bff;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
             --text-color: #333;
-            --light-bg: #f8f9fa;
-            --white: #fff;
-            --gray-border: #ddd;
-        }
-
-        /* Basic Reset & Body Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --border-radius: 5px;
+            --transition-speed: 0.3s ease;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--white);
+            background-color: var(--light-color);
             scroll-behavior: smooth;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+            margin-bottom: 0.5em;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
+        .section-padding {
+            padding: 80px 0;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .bg-dark {
+            background-color: var(--dark-color);
+            color: var(--white-color);
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .bg-light {
+            background-color: var(--white-color);
         }
 
-        p {
-            margin-bottom: 15px;
+        .text-white {
+            color: var(--white-color) !important;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+        .mt-3 { margin-top: 15px; }
+        .mt-4 { margin-top: 20px; }
 
-        .btn:hover {
-            background-color: #004085;
-            text-decoration: none;
-        }
 
-        .btn-secondary {
-            background-color: var(--secondary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #218838;
-        }
-
-        /* Header & Navigation */
+        /* Header */
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--white-color);
             padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.8em;
             margin: 0;
         }
 
         .logo a {
-            color: var(--white);
-            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
-        .nav-toggle {
-            display: none; /* Hidden by default for larger screens */
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--white);
-            cursor: pointer;
-        }
-
-        .nav-menu {
-            list-style: none;
+        nav ul {
             display: flex;
         }
 
-        .nav-menu li {
+        nav ul li {
             margin-left: 25px;
         }
 
-        .nav-menu a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color var(--transition-speed);
+            padding: 5px 0;
         }
 
-        .nav-menu a:hover {
-            color: #cceeff; /* Lighter blue */
-            text-decoration: none;
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
         }
-        
+
+        .admin-link {
+            background-color: var(--primary-color);
+            color: var(--white-color) !important;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            transition: background-color var(--transition-speed);
+        }
+
+        .admin-link:hover {
+            background-color: var(--secondary-color);
+        }
+
         /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500/0056b3/ffffff?text=VIGNAN+LARA+COLLEGE') no-repeat center center/cover;
-            color: var(--white);
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/0056b3/ffffff?text=Vignan+lara+college+Campus') no-repeat center center/cover;
+            color: var(--white-color);
             text-align: center;
-            padding: 100px 20px;
-            min-height: 400px;
+            padding: 150px 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 60vh;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--white);
+        #hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--white-color);
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        #hero p {
+            font-size: 1.5em;
             margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        /* Sections */
-        .section {
-            padding: 80px 0;
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: background-color var(--transition-speed);
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
         }
 
-        .section.bg-light {
-            background-color: var(--light-bg);
+        .btn:hover {
+            background-color: var(--primary-color);
         }
 
-        .section h2 {
+        /* About & Features Sections */
+        #about h3, #features h3, #data-demo h3, #contact h3 {
             text-align: center;
+            font-size: 2.5em;
             margin-bottom: 40px;
-            font-size: 2.5rem;
+            color: var(--primary-color);
         }
 
-        /* Course Grid */
-        .course-grid {
+        #about p {
+            font-size: 1.1em;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .course-item {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .course-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .course-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .course-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .course-item ul li {
-            padding: 8px 0;
-            border-bottom: 1px dotted var(--gray-border);
-        }
-
-        .course-item ul li:last-child {
-            border-bottom: none;
-        }
-
-        /* Faculty Grid */
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+        .feature-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
-            margin-top: 30px;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
         }
 
-        .faculty-item {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
 
-        .faculty-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid var(--primary-color);
-        }
-
-        .faculty-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .faculty-item p {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
+        .feature-card h4 {
+            color: var(--primary-color);
+            font-size: 1.4em;
             margin-bottom: 10px;
         }
 
-        .contact-form-container {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        .feature-card p {
+            color: #555;
+            font-size: 0.95em;
         }
 
-        .contact-form .form-group {
+        /* Data Demo Section */
+        #data-demo h4 {
+            color: var(--primary-color);
+            margin-top: 30px;
             margin-bottom: 15px;
         }
 
-        .contact-form label {
+        .data-controls {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .data-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 50px;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: var(--dark-color);
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid var(--gray-border);
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
         }
 
-        .contact-form textarea {
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+
+        textarea {
             resize: vertical;
         }
 
-        .contact-form button {
-            width: auto;
-            margin-top: 10px;
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        .message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            display: none; /* Hidden by default */
-            font-weight: bold;
-        }
-
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        /* Backend Demo */
-        .demo-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-        .response-area {
-            background-color: var(--white);
-            border: 1px solid var(--gray-border);
-            border-radius: 8px;
-            padding: 20px;
-            min-height: 100px;
-            white-space: pre-wrap; /* Preserve whitespace and break lines */
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-        }
-        
         /* Footer */
         footer {
-            background-color: #333;
-            color: var(--white);
-            padding: 30px 0;
+            background-color: var(--dark-color);
+            color: var(--white-color);
             text-align: center;
-            font-size: 0.9rem;
+            padding: 30px 0;
+            font-size: 0.9em;
         }
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        footer p {
+            margin: 5px 0;
         }
 
-        .footer-links a {
-            color: var(--white);
+        footer a {
+            color: var(--white-color);
             margin: 0 10px;
-            text-decoration: none;
+            transition: color var(--transition-speed);
         }
 
-        .footer-links a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: var(--secondary-color);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
+            header .container {
                 flex-direction: column;
-                width: 100%;
-                background-color: var(--primary-color);
-                position: absolute;
-                top: 70px; /* Adjust based on header height */
-                left: 0;
-                padding: 20px 0;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                margin: 0;
                 text-align: center;
-                padding: 10px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
-            .nav-menu li:last-child {
-                border-bottom: none;
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
             }
 
-            .hero h2 {
-                font-size: 2.5rem;
+            nav ul li {
+                margin: 5px 0;
             }
 
-            .section {
+            #hero {
+                padding: 100px 0;
+            }
+            #hero h2 {
+                font-size: 2.5em;
+            }
+            #hero p {
+                font-size: 1.2em;
+            }
+
+            .section-padding {
                 padding: 60px 0;
             }
 
-            .section h2 {
-                font-size: 2rem;
+            #about h3, #features h3, #data-demo h3, #contact h3 {
+                font-size: 2em;
             }
 
-            .contact-grid {
+            .feature-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .course-grid, .faculty-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .demo-actions {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .logo {
-                font-size: 1.5rem;
             }
         }
