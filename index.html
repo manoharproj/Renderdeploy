@@ -3,359 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vignan lara college - Your Future Starts Here</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' font-size='80' text-anchor='middle' dominant-baseline='central'%3E🎓%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <title>Vignan lara college</title>
     <style>
-        /* Basic Reset & Global Styles */
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #007bff;
-            --dark-color: #343a40;
-            --light-color: #f8f9fa;
-            --white-color: #ffffff;
-            --text-color: #333;
-            --border-radius: 5px;
-            --transition-speed: 0.3s ease;
-        }
-
+        /* Basic Reset & Body Styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-            scroll-behavior: smooth;
         }
 
-        *, *::before, *::after {
-            box-sizing: inherit;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: color var(--transition-speed);
-        }
-
-        a:hover {
-            color: var(--primary-color);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--dark-color);
-            margin-bottom: 0.5em;
-        }
-
+        /* Container for content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 20px;
         }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .bg-dark {
-            background-color: var(--dark-color);
-            color: var(--white-color);
-        }
-
-        .bg-light {
-            background-color: var(--white-color);
-        }
-
-        .text-white {
-            color: var(--white-color) !important;
-        }
-
-        .mt-3 { margin-top: 15px; }
-        .mt-4 { margin-top: 20px; }
-
 
         /* Header */
         header {
-            background-color: var(--white-color);
+            background-color: #004d40; /* Dark green */
+            color: #fff;
             padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .logo {
             font-size: 1.8em;
-            margin: 0;
-        }
-
-        .logo a {
-            color: var(--primary-color);
             font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
         }
 
         nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 20px;
         }
 
         nav ul li a {
-            color: var(--dark-color);
+            color: #fff;
+            text-decoration: none;
             font-weight: 500;
-            transition: color var(--transition-speed);
             padding: 5px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
         }
 
         nav ul li a:hover,
         nav ul li a.active {
-            color: var(--secondary-color);
-        }
-
-        .admin-link {
-            background-color: var(--primary-color);
-            color: var(--white-color) !important;
-            padding: 8px 15px;
-            border-radius: var(--border-radius);
-            transition: background-color var(--transition-speed);
-        }
-
-        .admin-link:hover {
-            background-color: var(--secondary-color);
+            color: #a7ffeb; /* Light teal */
+            border-bottom: 2px solid #a7ffeb;
         }
 
         /* Hero Section */
-        #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/0056b3/ffffff?text=Vignan+lara+college+Campus') no-repeat center center/cover;
-            color: var(--white-color);
+        .hero {
+            background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://via.placeholder.com/1500x500/004d40/a7ffeb?text=Vignan+College+Campus') no-repeat center center/cover;
+            color: #fff;
             text-align: center;
-            padding: 150px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
-        }
-
-        #hero h2 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            color: var(--white-color);
-        }
-
-        #hero p {
-            font-size: 1.5em;
+            padding: 100px 20px;
             margin-bottom: 30px;
-            opacity: 0.9;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
+            background-color: #a7ffeb; /* Light teal */
+            color: #004d40; /* Dark green */
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
-            transition: background-color var(--transition-speed);
+            transition: background-color 0.3s ease, color 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1em;
         }
 
         .btn:hover {
-            background-color: var(--primary-color);
+            background-color: #64dd17; /* Lime green */
+            color: #00251a;
         }
 
-        /* About & Features Sections */
-        #about h3, #features h3, #data-demo h3, #contact h3 {
-            text-align: center;
+        /* General Section Styling */
+        section {
+            padding: 60px 0;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
             font-size: 2.5em;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-
-        #about p {
-            font-size: 1.1em;
+            color: #004d40;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #a7ffeb;
+            border-radius: 2px;
         }
 
-        .feature-grid {
+
+        /* Courses Section */
+        .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .feature-card {
-            background-color: var(--light-color);
-            padding: 30px;
-            border-radius: var(--border-radius);
+        .course-card {
+            background-color: #f9f9f9;
+            border-left: 5px solid #004d40;
+            padding: 25px;
+            border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .feature-card:hover {
+        .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
-        .feature-card h4 {
-            color: var(--primary-color);
-            font-size: 1.4em;
+        .course-card h3 {
+            color: #004d40;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        /* Admin Dashboard Section */
+        .admin-dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background-color: #e0f2f1; /* Lighter teal */
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .stat-card h3 {
+            color: #004d40;
+            font-size: 1.2em;
             margin-bottom: 10px;
         }
 
-        .feature-card p {
-            color: #555;
-            font-size: 0.95em;
+        .stat-card p {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00251a;
+            margin: 0;
         }
 
-        /* Data Demo Section */
-        #data-demo h4 {
-            color: var(--primary-color);
+        #admin-data-output {
             margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        .data-controls {
-            background-color: var(--white-color);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-        }
-
-        .data-result {
-            margin-top: 20px;
-            padding: 15px;
+            padding: 20px;
             background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
+            border-left: 5px solid #64dd17;
+            border-radius: 5px;
             font-family: monospace;
             white-space: pre-wrap;
-            word-wrap: break-word;
-            min-height: 50px;
-        }
-        
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 20px;
         }
 
-        .form-group label {
+        /* Contact Form */
+        .contact-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-form-container label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--dark-color);
+            font-weight: 600;
+            color: #004d40;
         }
 
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
+        .contact-form-container input[type="text"],
+        .contact-form-container input[type="email"],
+        .contact-form-container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: var(--border-radius);
+            border-radius: 4px;
             font-size: 1em;
-            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+            box-sizing: border-box; /* Include padding in width */
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-            outline: none;
-        }
-
-        textarea {
+        .contact-form-container textarea {
             resize: vertical;
+            min-height: 120px;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--light-color);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        .contact-form-container input[type="submit"] {
+            width: auto;
+            padding: 12px 30px;
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form-container input[type="submit"]:hover {
+            background-color: #00251a;
+        }
+
+        #contact-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: none; /* Hidden by default */
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: var(--white-color);
+            background-color: #00251a; /* Even darker green */
+            color: #a7ffeb;
             text-align: center;
             padding: 30px 0;
-            font-size: 0.9em;
+            margin-top: 50px;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 0;
+            font-size: 0.9em;
         }
 
-        footer a {
-            color: var(--white-color);
-            margin: 0 10px;
-            transition: color var(--transition-speed);
-        }
-
-        footer a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Responsive Design */
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
             }
-
+            .logo {
+                margin-bottom: 15px;
+            }
             nav ul {
                 flex-direction: column;
-                margin-top: 15px;
+                align-items: flex-start;
+                width: 100%;
             }
-
             nav ul li {
                 margin: 5px 0;
             }
-
-            #hero {
-                padding: 100px 0;
-            }
-            #hero h2 {
+            .hero h1 {
                 font-size: 2.5em;
             }
-            #hero p {
-                font-size: 1.2em;
+            .hero p {
+                font-size: 1.1em;
             }
-
-            .section-padding {
-                padding: 60px 0;
+            section {
+                padding: 40px 0;
             }
-
-            #about h3, #features h3, #data-demo h3, #contact h3 {
+            section h2 {
                 font-size: 2em;
             }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
+            .contact-form-container {
+                padding: 20px;
             }
         }
     </style>
@@ -363,289 +321,220 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo"><a href="#">Vignan lara college</a></h1>
+            <a href="#" class="logo">Vignan lara college</a>
             <nav>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#admissions">Admissions</a></li>
-                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#admin">Admin Dashboard</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="admin-dashboard.html" class="admin-link">Admin Dashboard</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <h2>Shape Your Future with Vignan lara college</h2>
-            <p>Empowering minds, building careers.</p>
-            <a href="#contact" class="btn">Learn More</a>
-            <a href="#admissions" class="btn" style="margin-left: 15px;">Apply Now</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to Vignan lara college</h1>
+            <p>Empowering minds, shaping futures. Discover excellence in education.</p>
+            <a href="#admissions" class="btn">Apply Now</a>
+        </section>
 
-    <section id="about" class="section-padding bg-light">
-        <div class="container">
-            <h3>Welcome to Vignan lara college</h3>
-            <p>Vignan lara college is dedicated to providing quality education and fostering an environment of innovation and academic excellence. With state-of-the-art facilities and a commitment to holistic development, we prepare students for success in a rapidly changing world. Our diverse programs, experienced faculty, and strong industry connections ensure that our graduates are well-equipped to face global challenges and contribute meaningfully to society.</p>
-        </div>
-    </section>
-
-    <section id="features" class="section-padding">
-        <div class="container">
-            <h3>Why Choose Us?</h3>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>Experienced Faculty</h4>
-                    <p>Learn from dedicated professors and industry experts who are passionate about teaching and research.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Modern Infrastructure</h4>
-                    <p>State-of-the-art labs, libraries, smart classrooms, and recreational facilities for a dynamic learning environment.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Strong Placements</h4>
-                    <p>Excellent track record of placing students in top multinational companies and leading organizations.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Holistic Development</h4>
-                    <p>Focus on overall personality development, leadership skills, and extracurricular activities for well-rounded growth.</p>
-                </div>
+        <section id="about">
+            <div class="container">
+                <h2>About Vignan lara college</h2>
+                <p>Vignan lara college is a premier institution dedicated to providing high-quality education and fostering innovation. With a rich history of academic excellence and a forward-thinking approach, we prepare students for successful careers and responsible citizenship. Our state-of-the-art facilities, experienced faculty, and comprehensive curriculum ensure a holistic learning experience.</p>
+                <p>We believe in nurturing talent, encouraging critical thinking, and promoting a vibrant campus community where every student can thrive.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="data-demo" class="section-padding bg-light">
-        <div class="container">
-            <h3>Full-Stack Data Demo (Frontend Only)</h3>
-            <p>This section simulates interaction with a backend API at <code>http://localhost:5001/api/data</code>. If the backend is not running, the JavaScript will gracefully handle the network error and display an appropriate message, demonstrating robustness.</p>
-            
-            <div class="data-controls">
-                <h4>Fetch Data (GET Request)</h4>
-                <p>Click the button below to attempt fetching data from the backend.</p>
-                <button id="fetchDataBtn" class="btn">Fetch Data</button>
-                <div id="getDataResult" class="data-result"></div>
-            </div>
-
-            <div class="data-controls mt-4">
-                <h4>Post Data (POST Request)</h4>
-                <p>Enter some text and click 'Post Data' to simulate sending data to the backend.</p>
-                <form id="postDataForm">
-                    <div class="form-group">
-                        <label for="postDataItem">Data to Send:</label>
-                        <input type="text" id="postDataItem" name="item" placeholder="e.g., Student Inquiry" required>
+        <section id="courses">
+            <div class="container">
+                <h2>Our Programs & Courses</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <h3>Engineering & Technology</h3>
+                        <p>Specializations in Computer Science, Mechanical, Civil, and Electronics & Communication Engineering.</p>
                     </div>
-                    <button type="submit" class="btn">Post Data</button>
-                </form>
-                <div id="postDataResult" class="data-result"></div>
+                    <div class="course-card">
+                        <h3>Business & Management</h3>
+                        <p>Programs including MBA, BBA, and specialized courses in Finance, Marketing, and HR.</p>
+                    </div>
+                    <div class="course-card">
+                        <h3>Arts & Sciences</h3>
+                        <p>Degrees in Liberal Arts, Sciences (Physics, Chemistry, Biology), and Humanities.</p>
+                    </div>
+                    <div class="course-card">
+                        <h3>Computer Applications</h3>
+                        <p>MCA, BCA, and advanced diploma courses in software development and data science.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Placeholder Sections for Navigation -->
-    <section id="courses" class="section-padding" style="display: none;"></section>
-    <section id="admissions" class="section-padding" style="display: none;"></section>
-    <section id="faculty" class="section-padding" style="display: none;"></section>
-    <!-- End Placeholder Sections -->
+        <section id="admissions">
+            <div class="container">
+                <h2>Admissions</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">Embark on your academic journey with Vignan lara college. Our admission process is designed to be straightforward and accessible. Explore our programs and start your application today.</p>
+                <div style="text-align: center;">
+                    <a href="#contact" class="btn">Enquire About Admissions</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact" class="section-padding bg-light">
+        <section id="admin">
+            <div class="container">
+                <h2>Admin Dashboard (Client-side Demo)</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">This section demonstrates how a frontend might interact with a backend to fetch data. The data below is fetched from a dummy API endpoint (`http://localhost:5001/api/data`). If the backend isn't running, an error message will be displayed.</p>
+
+                <div class="admin-dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <p>2500+</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Faculty Members</h3>
+                        <p>150+</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Courses Offered</h3>
+                        <p>20+</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Campus Area</h3>
+                        <p>50 Acres</p>
+                    </div>
+                </div>
+
+                <h3 style="text-align: center; margin-top: 50px; color: #004d40;">Data from Backend API Demo:</h3>
+                <button id="fetchAdminDataBtn" class="btn" style="display: block; margin: 20px auto;">Fetch Live Admin Data</button>
+                <div id="admin-data-output">
+                    Click "Fetch Live Admin Data" to see output from `http://localhost:5001/api/data`...
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-form-container">
+                    <form id="contactForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <input type="submit" value="Send Message">
+                    </form>
+                    <div id="contact-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h3>Contact Us</h3>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 20px auto;">Have questions about admissions, courses, or anything else? Feel free to reach out to us using the form below. Our team will get back to you as soon as possible.</p>
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" placeholder="Inquiry about admissions">
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div id="contactFormMessage" class="mt-3" style="text-align: center;"></div>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
             <p>&copy; 2023 Vignan lara college. All rights reserved.</p>
-            <p>
-                <a href="#" class="text-white">Privacy Policy</a> | 
-                <a href="#" class="text-white">Terms of Service</a> | 
-                <a href="mailto:info@vignanlaracollege.edu" class="text-white">info@vignanlaracollege.edu</a>
-            </p>
+            <p>Designed for educational purposes.</p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Data Demo Section ---
-            const fetchDataBtn = document.getElementById('fetchDataBtn');
-            const getDataResult = document.getElementById('getDataResult');
-            const postDataForm = document.getElementById('postDataForm');
-            const postDataItemInput = document.getElementById('postDataItem');
-            const postDataResult = document.getElementById('postDataResult');
+        // Smooth scrolling for navigation links and active class highlighting
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-            // The backend URL for the demo
-            const backendUrl = 'http://localhost:5001/api/data';
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-            // Helper function to display messages in data demo sections
-            function displayDataMessage(element, message, isError = false) {
-                element.innerHTML = message;
-                element.style.color = isError ? '#dc3545' : '#28a745'; /* Bootstrap danger/success colors */
-                element.style.borderColor = isError ? '#dc3545' : '#28a745';
-                element.style.backgroundColor = isError ? '#f8d7da' : '#d4edda';
-                element.style.padding = '15px';
-                element.style.borderRadius = 'var(--border-radius)';
-                element.style.marginTop = '15px';
-                element.style.borderStyle = 'solid';
-                element.style.borderWidth = '1px';
-            }
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
 
-            // GET Data functionality
-            if (fetchDataBtn) {
-                fetchDataBtn.addEventListener('click', async () => {
-                    getDataResult.innerHTML = 'Attempting to fetch data...';
-                    getDataResult.style.color = 'gray';
-                    getDataResult.style.borderColor = '#ccc';
-                    getDataResult.style.backgroundColor = '#f0f0f0';
-
-
-                    try {
-                        const response = await fetch(backendUrl);
-
-                        if (!response.ok) {
-                            // Server responded with an HTTP error status (e.g., 404, 500)
-                            const errorText = await response.text();
-                            displayDataMessage(getDataResult, 
-                                `<strong>Error ${response.status} ${response.statusText}:</strong> Could not fetch data.<br>Backend might be unavailable or returned an error.<br>Server message: ${errorText || 'No specific error message.'}`, 
-                                true
-                            );
-                            return;
-                        }
-
-                        // Successfully fetched data
-                        const data = await response.json();
-                        displayDataMessage(getDataResult, 
-                            `<strong>Data fetched successfully:</strong><pre>${JSON.stringify(data, null, 2)}</pre>`
-                        );
-
-                    } catch (error) {
-                        // Network error (e.g., backend server not running, connection refused)
-                        console.error('Network or parsing error for GET:', error);
-                        displayDataMessage(getDataResult, 
-                            `<strong>Network Error:</strong> Could not connect to the backend server at <code>${backendUrl}</code>.<br>The backend might be unavailable or offline. Error details: ${error.message}`, 
-                            true
-                        );
-                    }
-                });
-            }
-
-            // POST Data functionality
-            if (postDataForm) {
-                postDataForm.addEventListener('submit', async (event) => {
-                    event.preventDefault(); // Prevent default form submission
-
-                    const itemValue = postDataItemInput.value.trim();
-                    if (!itemValue) {
-                        displayDataMessage(postDataResult, 'Please enter some data to post.', true);
-                        return;
-                    }
-
-                    postDataResult.innerHTML = 'Attempting to post data...';
-                    postDataResult.style.color = 'gray';
-                    postDataResult.style.borderColor = '#ccc';
-                    postDataResult.style.backgroundColor = '#f0f0f0';
-
-                    try {
-                        const response = await fetch(backendUrl, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({ 
-                                item: itemValue, 
-                                timestamp: new Date().toISOString(),
-                                source: 'Vignan Lara College Frontend Demo'
-                            }),
-                        });
-
-                        if (!response.ok) {
-                            // Server responded with an HTTP error status
-                            const errorText = await response.text();
-                            displayDataMessage(postDataResult, 
-                                `<strong>Error ${response.status} ${response.statusText}:</strong> Could not post data.<br>Backend might be unavailable or returned an error.<br>Server message: ${errorText || 'No specific error message.'}`, 
-                                true
-                            );
-                            return;
-                        }
-
-                        // Successfully posted data
-                        const data = await response.json();
-                        displayDataMessage(postDataResult, 
-                            `<strong>Data posted successfully:</strong><br>Backend response: <pre>${JSON.stringify(data, null, 2)}</pre>`
-                        );
-                        postDataItemInput.value = ''; // Clear input field
-
-                    } catch (error) {
-                        // Network error
-                        console.error('Network or parsing error for POST:', error);
-                        displayDataMessage(postDataResult, 
-                            `<strong>Network Error:</strong> Could not connect to the backend server at <code>${backendUrl}</code>.<br>The backend might be unavailable or offline. Error details: ${error.message}`, 
-                            true
-                        );
-                    }
-                });
-            }
-
-            // --- Contact Form Section ---
-            const contactForm = document.getElementById('contactForm');
-            const contactFormMessage = document.getElementById('contactFormMessage');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', (event) => {
-                    event.preventDefault(); // Prevent actual form submission to a backend
-
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const message = document.getElementById('message').value.trim();
-
-                    // Basic client-side validation
-                    if (name && email && message) {
-                        contactFormMessage.innerHTML = 'Thank you for your message! We have received your inquiry and will get back to you soon.';
-                        contactFormMessage.style.color = '#28a745'; /* Success green */
-                        contactFormMessage.style.backgroundColor = '#d4edda';
-                        contactFormMessage.style.border = '1px solid #28a745';
-                        contactFormMessage.style.padding = '15px';
-                        contactFormMessage.style.borderRadius = 'var(--border-radius)';
-                        contactFormMessage.style.display = 'block'; // Make sure it's visible
-
-                        // Simulate form submission by clearing inputs
-                        contactForm.reset();
-                    } else {
-                        contactFormMessage.innerHTML = 'Please fill in all required fields (Name, Email, and Message) before sending.';
-                        contactFormMessage.style.color = '#dc3545'; /* Danger red */
-                        contactFormMessage.style.backgroundColor = '#f8d7da';
-                        contactFormMessage.style.border = '1px solid #dc3545';
-                        contactFormMessage.style.padding = '15px';
-                        contactFormMessage.style.borderRadius = 'var(--border-radius)';
-                        contactFormMessage.style.display = 'block'; // Make sure it's visible
-                    }
-                });
-            }
+                    // Update active class
+                    document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
         });
+
+        // Contact Form Submission Handling
+        const contactForm = document.getElementById('contactForm');
+        const contactMessage = document.getElementById('contact-message');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent actual form submission
+
+                // In a real full-stack app, you would send this data to your backend
+                // using fetch or XMLHttpRequest. For this demo, we just simulate success.
+                console.log('Contact Form Submitted:');
+                const formData = new FormData(contactForm);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+                console.log(data);
+
+                contactMessage.style.display = 'block';
+                contactMessage.style.backgroundColor = '#d4edda';
+                contactMessage.style.color = '#155724';
+                contactMessage.style.borderColor = '#c3e6cb';
+                contactMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                contactForm.reset(); // Clear the form
+
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    contactMessage.style.display = 'none';
+                }, 5000);
+            });
+        }
+
+
+        // Admin Dashboard Data Fetch Demo
+        const fetchAdminDataBtn = document.getElementById('fetchAdminDataBtn');
+        const adminDataOutput = document.getElementById('admin-data-output');
+        const apiUrl = 'http://localhost:5001/api/data'; // Backend endpoint
+
+        if (fetchAdminDataBtn && adminDataOutput) {
+            fetchAdminDataBtn.addEventListener('click', fetchData);
+        }
+
+        async function fetchData() {
+            adminDataOutput.textContent = 'Fetching data from backend...';
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    // Check for HTTP errors (e.g., 404, 500)
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                adminDataOutput.style.backgroundColor = '#e6ffe6'; /* Light green for success */
+                adminDataOutput.style.borderColor = '#4CAF50';
+                adminDataOutput.textContent = `Successfully fetched data:\n${JSON.stringify(data, null, 2)}`;
+                console.log('Fetched data:', data);
+            } catch (error) {
+                // Handle network errors (e.g., server not running, connection refused)
+                // or JSON parsing errors, or HTTP errors from !response.ok
+                console.error('Error fetching admin data:', error);
+                adminDataOutput.style.backgroundColor = '#ffe0e0'; /* Light red for error */
+                adminDataOutput.style.borderColor = '#f44336';
+                adminDataOutput.textContent = `Error: Could not connect to backend or fetch data.\n`;
+                adminDataOutput.textContent += `Please ensure your backend server is running at ${apiUrl}.\n`;
+                adminDataOutput.textContent += `(Error details: ${error.message})`;
+            }
+        }
     </script>
 </body>
 </html>

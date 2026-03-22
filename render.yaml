@@ -1,6 +1,10 @@
 services:
   - type: web
-    name: nova-generated-app
+    name: vignan-lara-flask
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn server:app"
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
